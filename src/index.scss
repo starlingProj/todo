@@ -1,0 +1,159 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: rgb(173, 255, 166);
+}
+
+.todo {
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 800px;
+	height: 600px;
+
+	flex-direction: column;
+	background-color: #eeeeee;
+
+	&__name {
+		color: #f4f4f4;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(255, 162, 23);
+
+		h4 {
+			font-family: 'Roboto';
+			font-size: 20px;
+			font-weight: 500;
+
+		}
+	}
+
+	&__add-todoes {
+		display: flex;
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+
+		input {
+			outline: none;
+			border: none;
+			font-size: 20px;
+			padding: 10px 0px;
+
+			flex: 1;
+			background-color: #eeeeee;
+		}
+
+		&-icon {
+			svg {
+				width: 25px;
+				height: 25px;
+			}
+
+			cursor: pointer;
+
+			&:hover {
+				svg {
+					path {
+						fill: green;
+					}
+				}
+			}
+		}
+	}
+
+	&__item-list {
+		font-size: 20px;
+
+		&:hover {
+			background-color: #f8f4e6;
+		}
+
+		display: flex;
+
+		padding: 20px 10px;
+
+		&__task {
+
+			padding-left: 10px;
+			width: 100%;
+		}
+
+		&__check {
+			border-radius: 50%;
+			border: 1px solid green;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			background-color: rgb(255, 162, 23);
+			opacity: 0.3;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			svg {
+				width: 11px;
+				height: 14px;
+				padding-left: 4px;
+				display: none;
+			}
+
+		}
+
+		&__remove {
+			&:hover {
+				svg {
+					path {
+						fill: rgb(231, 61, 61);
+					}
+				}
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		&__completed {
+			text-decoration: line-through;
+
+			.todo__item-list__check {
+				opacity: 1;
+
+				svg {
+
+					display: inline;
+				}
+			}
+
+		}
+	}
+
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: rgb(192, 192, 192);
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: rgb(192, 192, 192);
+}
+
+:-ms-input-placeholder {
+	/* IE 10+ */
+	color: rgb(192, 192, 192);
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: rgb(192, 192, 192);
+}
